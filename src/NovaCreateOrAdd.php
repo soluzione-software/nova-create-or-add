@@ -185,7 +185,7 @@ class NovaCreateOrAdd extends Field {
 	 * @return void
 	 */
 	public function fill(NovaRequest $request, $model) {
-		parent::fillInto($request, $model, $model->{ $this->attribute}()->getForeignKey());
+		parent::fillInto($request, $model, $model->{ $this->attribute}()->getForeignKeyName());
 
 		if ($this->filledCallback) {
 			call_user_func($this->filledCallback, $request, $model);
